@@ -71,9 +71,9 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-    arr.forEach(callback(1, arr));
+    arr.forEach((num, idx, arr) => {callback(num,arr)} );
     return arr;
-};
+   };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -86,9 +86,10 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-    arr.forEach(function(value, index){
-        return arr;
+    arr.forEach(function(num, idx, arr){
+        removeOne(num, arr)
     })
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
