@@ -13,7 +13,7 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  /d/.test(input);
+ return /\d/.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,6 +61,7 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   const october = /^[Oo]ct(ober)/
+  return october.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,7 +75,8 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  let spacePattern = /\w+\s/g;
+  return str.match(spacePattern)
 };
 
 /* ------------------------------------------------------------------------------------------------
