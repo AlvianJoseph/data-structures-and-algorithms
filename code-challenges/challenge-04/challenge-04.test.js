@@ -25,10 +25,9 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let pattern = /[A-Z][a-zA-Z]*/g;
-  let capitals = str.match(pattern);
 
-  return capitals;
+  const matches = str.match(/\b[A-Z]\w*/g);
+  return matches || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,7 +91,8 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+  return str.replace(/[a|e|i|o|u]/g, '_');
+
 };
 
 /* ------------------------------------------------------------------------------------------------
