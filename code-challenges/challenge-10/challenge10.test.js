@@ -15,11 +15,13 @@ const count = (target, input) => {
   let numCount = input.reduce((acc, val) => {
     val.forEach((num) => {
       if (num === target) {
-        acc + 1;
-        return acc;
+        acc += 1;
       }
     })
+    return acc;
+
   }, 0)
+  return numCount;
 };
 
 describe('Testing challenge 1', () => {
@@ -44,16 +46,17 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  input.reduce((acc, val) => {
+  let sum = input.reduce((acc, val) => {
     val.forEach((num) => {
       acc = acc + num;
-      return acc;
     })
+    return acc;
 
   }, 0)
+  return sum;
 };
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should add all the numbers in the arrays', () => {
     const nums = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]];
 
@@ -154,9 +157,13 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   return data.reduce((acc, val) => {
-    if (val.gender === 'male' || val.gender === 'female') {
-      acc.push(val.name)
-    }
+    data.forEach((character) => {
+      if (val.gender === 'male' || val.gender === 'female') {
+        acc.push(val.name)
+      }
+    })
+    console.log(acc);
+    return acc.join(' and ');
   }, [])
 };
 
