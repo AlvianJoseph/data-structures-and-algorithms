@@ -98,7 +98,8 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (arr) => {
-    return arr.split('').reduce((acc, val) => acc + val, '');
+    return arr.split('').reduce((acc, val) => val + acc, '');
+
 
 };
 describe('Testing challenge 3', () => {
@@ -157,7 +158,7 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
     return arr.reduce((acc, val) => {
-        return current.children ? acc + val.children.length : acc;
+        return val.children ? acc + val.children.length : acc;
       }, 0);
 };
 
@@ -210,7 +211,7 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-    // Solution code here...
+    return arr.reduce((acc, val) => isPrime(val) ? acc + 1 : val, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -289,7 +290,7 @@ Run your tests from the console: jest challenges-09.test.js
 
 
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
     test('It should return a count of the prime numbers in the array', () => {
         expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
     });
