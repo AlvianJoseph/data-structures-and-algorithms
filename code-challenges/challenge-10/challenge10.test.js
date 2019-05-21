@@ -156,15 +156,19 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  return data.reduce((acc, val) => {
-    data.forEach((character) => {
-      if (val.gender === 'male' || val.gender === 'female') {
-        acc.push(val.name)
-      }
-    })
-    console.log(acc);
-    return acc.join(' and ');
-  }, [])
+  const gendered = data.filter(character => character.gender === 'male' || character.gender === 'female');
+
+  const names = gendered.map(character => character.name);
+
+  return names.join(' and ');
+  // data.reduce((acc, val) => {
+  //   if (val.gender === 'male' || val.gender === 'female') {
+  //     acc.push(val.name);
+  //     return acc;
+  //   }
+  //   console.log(acc);
+  //   return acc.join(' and ');
+  // }, '')
 };
 
 describe('Testing challenge 4', () => {
@@ -180,7 +184,8 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  data.reduce((acc, val)=>{
+  }, '')
 };
 
 /* ------------------------------------------------------------------------------------------------
