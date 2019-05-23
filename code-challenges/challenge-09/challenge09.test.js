@@ -203,15 +203,16 @@ You are welcome to use the provided isPrime function.
 
 const isPrime = (value) => {
     for (let i = 2; i < value; i++) {
-        if (value % i === 0) {
-            return false;
-        }
+      if (value % i === 0) {
+        return false;
+      }
     }
     return value > 1;
-};
-
-const countPrimeNumbers = (arr) => {
-    return arr.reduce((acc, val) => isPrime(val) ? acc + 1 : val, 0);
+  };
+  
+  const countPrimeNumbers = (arr) => {
+    //<solution>
+    return arr.reduce((acc, val) => isPrime(val) ? acc + 1 : acc, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
