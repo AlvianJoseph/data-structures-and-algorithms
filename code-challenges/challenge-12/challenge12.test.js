@@ -168,12 +168,13 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 
 const calculateProduct = (numbers) => {
   let product = 1;
-  for (let i = 0; i < numbers.length; i++) {
-    for (let j = 0; j < numbers[i].length; j++) {
+
+  for(let i=0; i < numbers.length; i++) {
+    for(let j=0; j < numbers[i].length; j++) {
       product *= numbers[i][j];
     }
-    return product;
   }
+  return product;
 };
 
 describe('Testing challenge 5', () => {
@@ -238,9 +239,30 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  let lowest = 200;
+
+  for (let i = 0; i < weather.length; i++) {
+    let days = 0;
+    let totalTemperature = 0;
+    for (let j = 0; j < weather[i].length; j++) {
+      days++;
+      totalTemperature += weather[i][j];
+    }
+
+    let weekAverage = totalTemperature / days;
+    if (weekAverage < lowest) {
+      lowest = weekAverage;
+    }
+  }
+  return lowest;
 };
 
+describe('Testing challenge 7', () => {
+  test('It should return the lowest weekly average temperature within the data set', () => {
+    expect(lowestWeeklyAverage(weeklyTemperatures)).toStrictEqual(57);
+    expect(lowestWeeklyAverage(lowestWeeklyTemperatureData)).toStrictEqual(46);
+  });
+});
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
 
@@ -257,12 +279,7 @@ const excel = (str) => {
   // Solution code here...
 };
 
-xdescribe('Testing challenge 7', () => {
-  test('It should return the lowest weekly average temperature within the data set', () => {
-    expect(lowestWeeklyAverage(weeklyTemperatures)).toStrictEqual(57);
-    expect(lowestWeeklyAverage(lowestWeeklyTemperatureData)).toStrictEqual(46);
-  });
-});
+
 /* ------------------------------------------------------------------------------------------------
 TESTS
 

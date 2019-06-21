@@ -198,7 +198,7 @@ DO NOT CHANGE any of the below code.
 Run your tests from the console: jest challenges-10.test.js
 
 ------------------------------------------------------------------------------------------------ */
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the name of the shortest character', () => {
     expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
   });

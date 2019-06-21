@@ -86,10 +86,10 @@ console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
 const append = (arr1, arr2) => {
-  arr2.forEach(function(val){
-      arr1.push(val);
-  })
-console.log(arr1);
+  // arr2.forEach(function(val){
+  //     arr1.push(val);
+  // })
+  arr2.forEach(val => (arr1.push(val)));
 };
 
 /* ------------------------------------------------------------------------------------------------

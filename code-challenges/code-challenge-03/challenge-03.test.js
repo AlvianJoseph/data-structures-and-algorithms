@@ -212,8 +212,15 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-    // Solution code here...
-};
+    const daysOfWeek = {
+        Monday: 0,
+        Tuesday: 1,
+        Wednesday: 2,
+        Thursday: 3,
+        Friday: 4
+      };
+      return arr.sort( (a,b) => daysOfWeek[a.dayOfWeek] - daysOfWeek[b.dayOfWeek] );
+    };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal

@@ -92,7 +92,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  return str.replace(/[a|e|i|o|u]/g, '_');
+  return str.replace(/[a|e|i|o|u]/gi, '_');
   
 };
 
